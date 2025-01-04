@@ -19,7 +19,7 @@
     border:solid black;
     width:90%;
     height:90%;
-    justify-content:flex;
+    justify-content:center;
     display:flex;
 }
 
@@ -29,4 +29,15 @@
     height:100px;
     align-self:end;
     justify-self:center;
+    display:flex;
+    justify-content:center;
+}
+
+#attack, #retreat{
+    border:solid black;
+    width:40%;
+    height:50%;
+    margin:10px;
+    align-self:center;
+
 }
