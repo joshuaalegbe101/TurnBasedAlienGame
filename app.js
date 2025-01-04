@@ -25,4 +25,4 @@ class AlienShip extends Ship{
     constructor()
 }
 
-let heroShip = Ship(20, 5, .7);
+//let heroShip = Ship(20, 5, .7);

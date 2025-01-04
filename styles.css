@@ -19,4 +19,14 @@
     border:solid black;
     width:90%;
     height:90%;
+    justify-content:flex;
+    display:flex;
+}
+
+.buttonContainer{
+    border:solid black;
+    width:90%;
+    height:100px;
+    align-self:end;
+    justify-self:center;
 }
