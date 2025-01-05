@@ -2,7 +2,7 @@ const titleHeader = document.getElementById('title');
 const startButton = document.getElementById('begin');
 const startContainer = document.getElementById('start');
 const contentScreen = document.getElementById('display');
-const session = document.getElementById('gameplay');
+const session = document.getElementById('preScreen');
 
 class GameManager {
     round(hero, armada) {

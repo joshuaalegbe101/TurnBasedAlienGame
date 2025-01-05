@@ -42,8 +42,7 @@
     align-items:center;
 }
 
-#gameplay{
-    display:none;
+#preScreen{
     color:aliceblue;
     border:solid white;
     width:90%;
@@ -53,7 +52,7 @@
 }
 
 #alienShowcase1{
-    border:solid yellow;
+    /*border:solid yellow;*/
     display:flex;
     justify-content:space-around;
 }
@@ -63,4 +62,17 @@
     display:flex;
     justify-content:center;
 }
+
+#message{
+    border: solid white;
+    display:flex;
+    justify-content: center;
+    margin-top:50px;
+    margin-bottom:40px
+}
+
+#preScreen{
+    display:none;
+}
+
 
