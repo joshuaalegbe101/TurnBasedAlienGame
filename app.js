@@ -1,6 +1,7 @@
 const titleHeader = document.getElementById('title');
 const startButton = document.getElementById('begin');
 const startContainer = document.getElementById('start');
+const contentScreen = document.getElementById('display');
 const session = document.getElementById('gameplay');
 
 class GameManager {
@@ -34,6 +35,12 @@ const gameStart = () => {
     titleHeader.style.display ='none';
     startContainer.style.display ='none';
     session.style.display ='block';
+    contentScreen.style.backgroundColor='black';
+
+    //timer
+
+
+
     
     let heroShip = Ship();
 

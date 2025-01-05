@@ -15,7 +15,7 @@
     align-items:center;
 }
 
-.display{
+#display{
     border:solid black;
     width:90%;
     height:90%;
@@ -44,5 +44,23 @@
 
 #gameplay{
     display:none;
+    color:aliceblue;
+    border:solid white;
+    width:90%;
+    height:90%;
+    display:flex;
+    align-items:center;
+}
+
+#alienShowcase1{
+    border:solid yellow;
+    display:flex;
+    justify-content:space-around;
+}
+
+#heroShowcase{
+    /*border:solid white;*/
+    display:flex;
+    justify-content:center;
 }
 
