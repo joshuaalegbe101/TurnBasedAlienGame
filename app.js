@@ -1,3 +1,8 @@
+const titleHeader = document.getElementById('title');
+const startButton = document.getElementById('begin');
+const startContainer = document.getElementById('start');
+const session = document.getElementById('gameplay');
+
 class GameManager {
     round(hero, armada) {
         let turn = 0;
@@ -22,7 +27,22 @@ class Ship {
 }
 
 class AlienShip extends Ship{
-    constructor()
+
 }
 
-//let heroShip = Ship(20, 5, .7);
+const gameStart = () => {
+    titleHeader.style.display ='none';
+    startContainer.style.display ='none';
+    session.style.display ='block';
+    
+    let heroShip = Ship();
+
+    let aliens = [AlienShip(), AlienShip(), AlienShip(), AlienShip()];
+
+
+}   
+
+
+startButton.addEventListener('click', () => {
+    gameStart();
+});
