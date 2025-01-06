@@ -141,3 +141,7 @@
 #playerWin{
     display:none;
 }
+
+#enemy2, #enemy3{
+    display:none;
+}

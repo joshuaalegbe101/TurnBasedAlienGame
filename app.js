@@ -39,6 +39,11 @@ class GameManager {
         this.currentAlien = this.armada[0];
     }
     win() {
+        lowerFeedback.innerText = "Victory! All alien ships destroyed!";
+    }
+
+    cycleAliens() {
+
     }
 
     round() {
