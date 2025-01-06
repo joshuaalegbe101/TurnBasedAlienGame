@@ -2,7 +2,8 @@ const titleHeader = document.getElementById('title');
 const startButton = document.getElementById('begin');
 const startContainer = document.getElementById('start');
 const contentScreen = document.getElementById('display');
-const session = document.getElementById('preScreen');
+const preSession = document.getElementById('preScreen');
+const session = document.getElementById('gameplay');
 
 class GameManager {
     round(hero, armada) {
@@ -34,9 +35,10 @@ class AlienShip extends Ship{
 const gameStart = () => {
     titleHeader.style.display ='none';
     startContainer.style.display ='none';
-    session.style.display ='block';
+    //preSession.style.display ='block';
     contentScreen.style.backgroundColor='black';
 
+    session.style.display = 'block';
     //timer
 
 

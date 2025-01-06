@@ -75,4 +75,31 @@
     display:none;
 }
 
+#gameplay{
+    border: solid red;
+    color:whitesmoke;
+    display:none;
+    width:90%;
+    height:90%;
+    align-items:center;
+}
 
+#topPanel, #battleBox, #buttonsContainer{
+    border:solid whitesmoke;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#battleBox{
+    margin-top:50px;
+    display:flex;
+    justify-content:space-around;
+}
+
+#buttonsContainer{
+    margin-top:100px;
+    display:flex;
+    justify-content:space-around;
+
+}
