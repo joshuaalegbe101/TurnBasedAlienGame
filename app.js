@@ -51,6 +51,8 @@ class GameManager {
             console.log("Alien Ship Destroyed");
             lowerFeedback.innerText = "Alien Ship Destroyed"
             this.armada.shift();
+            updateHealthBar("enemyHealth", this.currentAlien.hull, this.currentAlien.initialHull);
+            
             if(this.armada.length === 0) {
                 console.log("All ships destroyed");
                 lowerFeedback.innerText = "All ships destroyed";
