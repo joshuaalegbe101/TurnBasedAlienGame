@@ -4,6 +4,8 @@ const startContainer = document.getElementById('start');
 const contentScreen = document.getElementById('display');
 const preSession = document.getElementById('preScreen');
 const session = document.getElementById('gameplay');
+const attackButton = documentElementById('attack');
+const retreatButton = documentElementById('retreat');
 
 class GameManager {
     round(hero, armada) {
@@ -26,10 +28,26 @@ class Ship {
         this.firepower = firepower, 
         this.accuracy = accuracy
     }
+
+    attack(target) {
+        if(Math.random() < this.accuracy) { //hit
+            console.log("target hit");
+            target.hull -= this.firepower; 
+
+            if(target.hull <= 0) {
+                target.hull = 0;
+                console.log("target destroyed");
+            }
+        }
+        else {
+            console.log("miss");
+        }
+
+    }
 }
 
 class AlienShip extends Ship{
-
+    //active
 }
 
 const gameStart = () => {
@@ -52,6 +70,11 @@ const gameStart = () => {
 }   
 
 
+
 startButton.addEventListener('click', () => {
     gameStart();
 });
+
+attackButton.addEventListener('click', () => {
+
+})
