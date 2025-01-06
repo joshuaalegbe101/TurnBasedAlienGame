@@ -17,7 +17,7 @@
     <div class="gameContainer">
       <div id="display">
         <div id="title">
-          <h>Alien Invasion</h>
+          <h2>Alien Invasion</h2>
         </div>
         <div id="start">
           <button id="begin">Start</button>
@@ -39,16 +39,23 @@
 
       <div id="gameplay">
         <div id="topPanel">
-          <h2>Hit or Miss</h2>
+          <h2 id="panel1">Hit or Miss</h2>
+          <h2 id="panel2">--</h2>
         </div>
       <div id="battleBox">
-          <img src="hero.png">
+          <img id="player" src="hero.png">
+          <div id="enemy">
           <img src="mainAlien.png">
+          </div>
         </div>
       <div id="buttonsContainer">
         <button id="attack">Attack</button>
         <button id="retreat">Retreat</button>
       </div>
+      </div>
+
+      <div id="playerWin">
+        <h2>The Earth is Saved!</h2>
       </div>
       </div>
     </div>
