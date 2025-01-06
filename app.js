@@ -12,14 +12,17 @@ const playerOne = document.getElementById('player');
 
 
 const gameStart = () => {
-    titleHeader.style.display ='none';
-    startContainer.style.display ='none';
-    //preSession.style.display ='block';
-    contentScreen.style.backgroundColor='black';
+    titleHeader.style.display = 'none';
+    startContainer.style.display = 'none';
+    preSession.style.display ='block';
+    
 
-    session.style.display = 'block';
-    //timer
-}   
+    setTimeout(() => {
+        preSession.style.display = 'none'
+        contentScreen.style.backgroundColor = 'black';
+        session.style.display = 'block';
+    }, 3000);
+};
 
 const updateHealthBar = (healthID, healthValue, initialHull) => {
     const healthBar = document.getElementById(healthID);

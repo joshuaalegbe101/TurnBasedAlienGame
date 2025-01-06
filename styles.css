@@ -1,21 +1,22 @@
 body{
     background: #1C6EA4;
     background: -moz-radial-gradient(center, #1C6EA4 0%, #2388CB 34%, #144E75 100%);
-    background: -webkit-radial-gradient(center, #1C6EA4 0%, #2388CB 34%, #144E75 100%);
+    background: -webkit-radial-gradient(center, #8fa5b4 0%, #2388CB 34%, #144E75 100%);
     background: radial-gradient(ellipse at center, #1C6EA4 0%, #2388CB 34%, #144E75 100%);
 }
 
 #begin, #attack, #retreat {
     color: rgb(255, 255, 255); font-size: 16px; line-height: 16px; padding: 6px; border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: radial-gradient(rgb(28, 110, 164) 0%, rgb(35, 136, 203) 34%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
     .myButton:hover {
-    background: #1C6EA4; }
+    background: #d42903; }
     .myButton:active {
-    background: #144E75; }
+    background: #eb1000; }
 
 .nav{
-    border: solid black;
+
     width:100%;
     height:100px;
+    display:hidden;
 }
 
 .gameContainer{
@@ -111,9 +112,19 @@ body{
 }
 
 #topPanel {
-    border:solid white;
+    /*border:solid white;*/
     align-items:center;
     flex-direction:column;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 16px;
+    letter-spacing: -1px;
+    word-spacing: 2px;
+    color: #fefefe;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
 }
 
 #panel {
@@ -121,7 +132,8 @@ body{
 }
 
 #battleBox{
-    border:solid whitesmoke;
+    /*border:solid whitesmoke;*/
+    border-radius: 10%;
     margin-top:50px;
     display:flex;
     justify-content:space-between;
@@ -166,4 +178,20 @@ body{
 
 #enemy2, #enemy3{
     display:none;
+}
+
+#player{
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+#enemy1{
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
