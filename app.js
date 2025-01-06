@@ -8,14 +8,30 @@ const attackButton = documentElementById('attack');
 const retreatButton = documentElementById('retreat');
 
 class GameManager {
-    round(hero, armada) {
-        let turn = 0;
-        while(hero.hull > 0 || armada.length > 0) {
-            //turn
+    constructor(hero, armada) {
+        this.hero = hero;
+        this.armada = armada;
+        this.currentAlien = this.armada[0];
+    }
+    round() {
+        if(this.currentAlien.hull <= 0) {
+            console.log("Alien Ship Destroyed");
+            this.armada.shift();
+            if(this.armada.length === 0) {
+                console.log("All ships destroyed");
+                return;
+            }
+            this.currentAlien = this.armada[0];
+        }
+        if(this.hero.hull <= 0) {
+            console.log('Your ship has been destroyed!');
+        }
+    }
 
-            //if alien ship is destroyed after attack grant option to retreat and exit loop
-
-
+    alienTurn() {
+        if(this.currentAlien.hull > 0) {
+            console.log("Alien attacks!");
+            this.currentAlien.attack(this.hero);
         }
     }
 }
@@ -48,6 +64,13 @@ class Ship {
 
 class AlienShip extends Ship{
     //active
+}
+
+const gameRound = (player, enemy) => {
+    while(player.hull > 0 || enemy[] > 0) {
+
+    }
+    
 }
 
 const gameStart = () => {
