@@ -42,16 +42,15 @@ class GameManager {
         lowerFeedback.innerText = "Victory! All alien ships destroyed!";
     }
 
-    cycleAliens() {
+    retreat() {
 
     }
 
     round() {
         if(this.currentAlien.hull <= 0) {
             console.log("Alien Ship Destroyed");
-            lowerFeedback.innerText = "Alien Ship Destroyed"
+            lowerFeedback.innerText = "Alien Ship Destroyed!"
             this.armada.shift();
-            updateHealthBar("enemyHealth", this.currentAlien.hull, this.currentAlien.initialHull);
             
             if(this.armada.length === 0) {
                 console.log("All ships destroyed");
@@ -59,6 +58,8 @@ class GameManager {
                 return;
             }
             this.currentAlien = this.armada[0];
+            updateHealthBar("enemyHealth", this.currentAlien.hull, this.currentAlien.initialHull);
+
         }
         if(this.hero.hull <= 0) {
             console.log('Your ship has been destroyed!');
@@ -125,6 +126,9 @@ const armada = [
     new Ship(3, 4, 0.6, "Alien"),
     new Ship(5, 3, 0.5, "Alien"),
     new Ship(6, 2, 0.8, "Alien"),
+    new Ship(3, 4, 0.6, "Alien"),
+    new Ship(5, 3, 0.5, "Alien"),
+    new Ship(6, 2, 0.8, "Alien"),
 ];
 
 const gameManager = new GameManager(hero, armada);
@@ -140,3 +144,5 @@ attackButton.addEventListener('click', () => {
         }
     }
 })
+
+retreatButton.addEventListener('click')
