@@ -4,9 +4,25 @@ const startContainer = document.getElementById('start');
 const contentScreen = document.getElementById('display');
 const preSession = document.getElementById('preScreen');
 const session = document.getElementById('gameplay');
-const attackButton = documentElementById('attack');
-const retreatButton = documentElementById('retreat');
+const attackButton = document.ElementById('attack');
+const retreatButton = document.ElementById('retreat');
+const feedback = document.getElementById('topPanel');
 
+
+const gameStart = () => {
+    titleHeader.style.display ='none';
+    startContainer.style.display ='none';
+    //preSession.style.display ='block';
+    contentScreen.style.backgroundColor='black';
+
+    session.style.display = 'block';
+    //timer
+}   
+
+
+startButton.addEventListener('click', () => {
+    gameStart();
+});
 class GameManager {
     constructor(hero, armada) {
         this.hero = hero;
@@ -66,38 +82,24 @@ class AlienShip extends Ship{
     //active
 }
 
-const gameRound = (player, enemy) => {
-    while(player.hull > 0 || enemy[] > 0) {
 
-    }
-    
-}
+const hero = new Ship(20, 5, 0.7);
+const armada = [
+    new Ship(15, 4, 0.6),
+    new Ship(12, 3, 0.5),
+    new Ship(10, 2, 0.4),
+];
 
-const gameStart = () => {
-    titleHeader.style.display ='none';
-    startContainer.style.display ='none';
-    //preSession.style.display ='block';
-    contentScreen.style.backgroundColor='black';
-
-    session.style.display = 'block';
-    //timer
-
-
-
-    
-    let heroShip = Ship();
-
-    let aliens = [AlienShip(), AlienShip(), AlienShip(), AlienShip()];
-
-
-}   
-
-
-
-startButton.addEventListener('click', () => {
-    gameStart();
-});
+const gameManager = new GameManager(hero, armada);
 
 attackButton.addEventListener('click', () => {
+    if(gameManager.hero.hull > 0 && gameManager.armada.length > 0) {
+        gameManager.hero.attack(gameManager.currentAlien);
+        gameManager.round();
 
+        
+        if(gameManager.armada.length > 0) {
+            setTimeout(() => gameManager.alienTurn(), 1000); 
+        }
+    }
 })
