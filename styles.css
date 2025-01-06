@@ -88,12 +88,48 @@
     align-items:center;
 }
 
+#topPanel {
+    border:solid white;
+    align-items:center;
+    flex-direction:column;
+}
+
+#panel {
+    margin-bottom:2px;
+}
+
 #battleBox{
     border:solid whitesmoke;
     margin-top:50px;
     display:flex;
-    justify-content:space-around;
+    justify-content:space-between;
+    padding:20px;
 }
+
+.playerContainer, .enemyContainer {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.healthBar {
+    width: 150px;
+    height: 20px;
+    background-color: gray;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-bottom: 10px; 
+    position: relative;
+}
+
+.healthBarFill {
+    height: 100%;
+    background-color: green;
+    width: 100%; /* Start at full health */
+    border-radius: 3px;
+    transition: width 0.3s ease; /* Smoothly decrease health */
+}
+
 
 #buttonsContainer{
     margin-top:100px;

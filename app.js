@@ -21,6 +21,11 @@ const gameStart = () => {
     //timer
 }   
 
+const updateHealthBar = (healthID, healthValue, initialHull) => {
+    const healthBar = document.getElementById(healthID);
+    const healthPercentage = (healthValue / initialHull) * 100;
+    healthBar.style.width = `${Math.max(0, healthPercentage)}%`;
+}
 
 startButton.addEventListener('click', () => {
     gameStart();
@@ -34,7 +39,6 @@ class GameManager {
         this.currentAlien = this.armada[0];
     }
     win() {
-
     }
 
     round() {
@@ -69,13 +73,25 @@ class Ship {
     //hull, firepower, accuracy
     constructor(hull, firepower, accuracy, type) {
         this.hull = hull,
+        this.initialHull = hull;
         this.firepower = firepower, 
         this.accuracy = accuracy,
         this.type = type;
     }
 
+    updateHealthBars(target) {
+        if (target.type === "Player") {
+            updateHealthBar("playerHealth", target.hull, target.initialHull);
+        }
+    
+        if (target.type === "Alien") {
+            updateHealthBar("enemyHealth", target.hull, target.initialHull);
+        }
+    }
+
     attack(target) {
         if(Math.random() < this.accuracy) { //hit
+            lowerFeedback.innerText = "";
             console.log("target hit");
             feedback.innerText = this.type + " hits " + target.type;
             target.hull -= this.firepower; 
@@ -87,24 +103,21 @@ class Ship {
                 feedback.innerText = "Target Destroyed";
                 */
             }
+            this.updateHealthBars(target);
         }
         else {
             console.log("miss");
-            feedback.innerText = this.type + "misses " + target.type;
+            feedback.innerText = this.type + " misses " + target.type;
         }
     }
-}
-
-class AlienShip extends Ship{
-    //active
 }
 
 
 const hero = new Ship(20, 5, 0.7, "Player");
 const armada = [
-    new Ship(15, 4, 0.6, "Alien"),
-    new Ship(12, 3, 0.5, "Alien"),
-    new Ship(10, 2, 0.4, "Alien"),
+    new Ship(3, 4, 0.6, "Alien"),
+    new Ship(5, 3, 0.5, "Alien"),
+    new Ship(6, 2, 0.8, "Alien"),
 ];
 
 const gameManager = new GameManager(hero, armada);
